@@ -30,8 +30,39 @@ w, W, b, B, ge, e, gE, E
 ```
 * [consider `.`, `-`, `)`, ...]
 
-# Visual block : ctrl V
+# Visual block : Ctrl-V
 Vertical check
 
 # Selecting Text to Write
 To save part of the file, type `:w FILENAME` in the VISUAL mode.
+
+# Search Command
+You can a word or phrase using `/` or `?` (backward), and `n` and `N` (backward).  
+To go back to where you came from, use `Ctrl-O`. `Ctrl-I` goes forward.  
+
+---
+
+The characters `.*[]^%/\?~$` have special meanings.  
+If you want to use them in a **search** you must put a `\` in front of them.
+
+---
+
+Command `*` find **words** under the cursor. `#` for other direction.  
+
+---
+
+`\>` : special marker that only matche at the end of a word  
+`\<` : simmilarly, beginning of a word  
+Example:  
+`/the\>` : find 'the' not 'there'
+
+---
+
+The `^` matches the beginning of a line  
+The `$` matches the end of a line  
+
+---
+
+the `.`(dot) matches any existing character.  
+Example:  
+`\c.m` -> cam, cim, cpm, ...
